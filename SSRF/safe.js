@@ -18,7 +18,7 @@ app.get('/profile', (req, res) => {
 
 app.get('/fetch-data', async (req, res) => {
     const urlParam = req.query.url;
-    console.log(`Received reqeust for /fetch-data with URL: $(urlParam)`);
+    console.log(`Received reqeust for /fetch-data with URL: ${urlParam}`);
 
     // validate alphanumeric
     if(!/^[a-z0-9]+$/i.test(urlParam)){
@@ -29,9 +29,9 @@ app.get('/fetch-data', async (req, res) => {
 
     try{
         const response = await axios.get(fullUrl);
-        console.log(`Data fetched and sent for URL: $(fullUrl)`);
+        console.log(`Data fetched and sent for URL: ${fullUrl}`);
     } catch(error){
-        console.error(`Error fetching data from URL: $(fullUrl)`, error);
+        console.error(`Error fetching data from URL: ${fullUrl}`, error);
         res.status(500).send('Error fetching data');
     }
 });

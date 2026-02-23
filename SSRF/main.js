@@ -18,14 +18,14 @@ app.get('/profile', (req,res) => {
 
 app.get('/fetch-data', async (req,res) => {
     const url = req.query.url;
-    console.log(`Received request for /fetch-data wit URL: $(url)`);
+    console.log(`Received request for /fetch-data wit URL: ${url}`);
 
     try{
         const response = await axios.get(url);
         res.send(response.data);
-        console.log(`Data fetched and sent for URL: $(url)`);
+        console.log(`Data fetched and sent for URL: ${url}`);
     } catch (error) {
-        console.error(`Error fetching data from URL: $(url)`, error);
+        console.error(`Error fetching data from URL: ${url}`, error);
         res.status(500).send(`Error fetching data`);
     }
 });
