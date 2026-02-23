@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 logging.basicConfig(level=logging.INFO)
 
-def is_authenticated_user()
+def is_authenticated_user():
     # This function checks if the user is authenticated and is omitted for brevity
     pass
 
